@@ -11,3 +11,28 @@ body {
   overflow: hidden;
   margin: 0;
 }
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 500px;
+}
+
+.progress {
+  background-color: dodgerblue;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  width: 50%;
+  height: 4px;
+  transition: 0.4s all;
+}
