@@ -3,7 +3,6 @@
 }
 
 body {
-  background-color: #f6f7fb;
   font-family: monospace;
   display: flex;
   align-items: center;
@@ -11,12 +10,4 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
-}
-
-.container {
-  text-align: center;
-}
-
-.progress-container {
-  display: flex;
 }
