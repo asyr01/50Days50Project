@@ -20,7 +20,9 @@ function blurring() {
   bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
 }
 
-// To make loadText invisible when reached 100%
+/* To make loadText invisible when reached 100%,
+ source => https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+*/
 function scale(number, inMin, inMax, outMin, outMax) {
   return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 }
