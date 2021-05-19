@@ -30,19 +30,20 @@ body {
 
 .container a {
   text-decoration: none;
-  color: lightblue;
+  color: #c26e6e;
 }
 
 .btn {
   cursor: pointer;
   display: inline-block;
   width: 100%;
-  background: #c09a9a;
+  background: #d89494;
   padding: 15px;
   font-family: inherit;
   font-size: 16px;
   border: 0;
   border-radius: 5px;
+  text-transform: uppercase;
 }
 
 .btn:focus {
@@ -80,4 +81,10 @@ body {
 .form-control input:focus,
 .form-control input:valid {
   outline: 0;
+}
+
+.form-control label {
+  position: absolute;
+  top: 30px;
+  left: 0;
 }
