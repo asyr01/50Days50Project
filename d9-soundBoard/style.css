@@ -5,11 +5,29 @@
 }
 
 body {
+  background-color: #93ebdc;
   font-family: 'Montserrat', sans-serif;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+.btn {
+  background-color: #72b1a6;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  margin: 1rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
 }

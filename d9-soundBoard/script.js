@@ -1,8 +1,9 @@
-const labels = document.querySelectorAll('.form-control label');
+const sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong'];
 
-labels.forEach((label) => {
-  label.innerHTML = label.innerText
-    .split('')
-    .map((letter, i) => `<span>${letter}</span>`)
-    .join('');
+sounds.forEach((sound) => {
+  const btn = document.createElement('button');
+  btn.classList.add('btn');
+  btn.innerText = sound;
+  document.getElementById('buttons').appendChild(btn);
+  3;
 });
