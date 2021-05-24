@@ -42,6 +42,15 @@ function randomSelect() {
       unhighlightTag(randomTag);
     }, 100);
   }, 100);
+
+  //Stop the animation and higlight a random tag
+  setTimeout(() => {
+    clearInterval(interval);
+    setTimeout(() => {
+      const randomTag = pickRandomTag();
+      highlightTag(randomTag);
+    });
+  }, times * 100);
 }
 
 // To highlight randomly
