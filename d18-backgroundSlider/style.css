@@ -56,14 +56,14 @@ body::before {
 
 .arrow {
   position: fixed;
-
+  cursor: pointer;
+  color: #fff;
   padding: 20px;
   font-size: 30px;
   border: none;
   top: 50%;
   /* middle to middle */
   transform: translateY(-50%);
-  z-index: 100;
   background-image: linear-gradient(
     to bottom right,
     #fff 0%,
@@ -71,6 +71,10 @@ body::before {
     rgb(224, 109, 109) 50%,
     rgb(160, 114, 76) 100%
   );
+}
+
+.arrow:focus {
+  outline: 0;
 }
 
 .left-arrow {
