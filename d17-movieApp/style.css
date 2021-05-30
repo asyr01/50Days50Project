@@ -109,3 +109,31 @@ main {
 .movie:hover .overview {
   transform: translateY(0);
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  cursor: pointer;
+  padding: 20px;
+  font-size: 30px;
+  border: none;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to right,
+    #5ca7d3 0%,
+    var(--primary-color) 30%,
+    var(--secondary-color) 35%,
+    var(--primary-color) 75%,
+    #5ca7d3 100%
+  );
+  margin: 20px;
+  border-radius: 50%;
+}
+
+.arrow:focus {
+  outline: 0;
+}
