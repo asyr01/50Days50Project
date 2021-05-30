@@ -1,5 +1,4 @@
-const API_URL =
-  'https:/api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=f69b71c8e65b1aef0270ca2280da25a6&page=1';
+const API_URL = `https:/api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=f69b71c8e65b1aef0270ca2280da25a6&page=`;
 
 const IMG_PATH = `https://image.tmdb.org/t/p/w1280`;
 
@@ -8,6 +7,8 @@ const SEARCH_API = `https://api.themoviedb.org/3/search/movie? api_key=f69b71c8e
 const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
+const links = document.querySelectorAll('.pages');
+let pageNumber = 1;
 
 async function getMovies(url) {
   const res = await fetch(url);
