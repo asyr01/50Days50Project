@@ -8,6 +8,8 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 const links = document.querySelectorAll('.pages');
+const leftBtn = document.getElementById('left');
+const rightBtn = document.getElementById('right');
 let pageNumber = 1;
 
 async function getMovies(url) {
@@ -62,6 +64,16 @@ form.addEventListener('submit', (e) => {
     window.location.reload();
   }
 });
+
+function changeThePage(int) {
+  if (int === 1) {
+    pageNumber++;
+  } else if (pageNumber !== 1) {
+    pageNumber--;
+  }
+  main.innerHTML = '';
+  getMovies(API_URL + pageNumber.toString());
+}
 
 // Get initial movies on load.
 getMovies(API_URL);
