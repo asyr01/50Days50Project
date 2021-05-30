@@ -2,7 +2,7 @@ const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
 
 const IMG_PATH = `https://image.tmdb.org/t/p/w1280`;
 
-const SEARCH_API = `https://api.themoviedb.org/3/search/movie? api_key=f69b71c8e65b1aef0270ca2280da25a6&query="`;
+const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=f69b71c8e65b1aef0270ca2280da25a6&query="`;
 
 const main = document.getElementById('main');
 const form = document.getElementById('form');
@@ -11,6 +11,7 @@ const links = document.querySelectorAll('.pages');
 const leftBtn = document.getElementById('left');
 const numInput = document.getElementById('numInput');
 const rightBtn = document.getElementById('right');
+const pagination = document.querySelector('.pagination');
 let pageNumber = numInput.value;
 
 async function getMovies(url) {
@@ -57,6 +58,7 @@ function getClassByRate(vote) {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  pagination.style.display = 'none';
   const searchTerm = search.value;
 
   if (searchTerm && searchTerm !== '') {
