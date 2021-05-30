@@ -9,8 +9,9 @@ const form = document.getElementById('form');
 const search = document.getElementById('search');
 const links = document.querySelectorAll('.pages');
 const leftBtn = document.getElementById('left');
+const numInput = document.getElementById('numInput');
 const rightBtn = document.getElementById('right');
-let pageNumber = 1;
+let pageNumber = numInput.value;
 
 async function getMovies(url) {
   const res = await fetch(url);
@@ -36,6 +37,7 @@ function showMovies(movies) {
     }</span>
           </div>
           <div class="overview">
+            <h3>${movie.title}</h3>
             <h3>${movie.overview}</h3>
           </div>
     `;
@@ -65,14 +67,25 @@ form.addEventListener('submit', (e) => {
   }
 });
 
+// If rightBtn clicked increment the page, otherwise decrease.
 function changeThePage(int) {
   if (int === 1) {
+    leftBtn.disabled = false;
     pageNumber++;
-  } else if (pageNumber !== 1) {
+    numInput.value++;
+  } else if (int === -1 && pageNumber > 1) {
     pageNumber--;
+    numInput.value--;
   }
   main.innerHTML = '';
-  getMovies(API_URL + pageNumber.toString());
+  getMovies(API_URL + pageNumber);
+}
+
+// Set the page from input box.
+function setThePage() {
+  pageNumber = numInput.value;
+  getMovies(API_URL + pageNumber);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // Get initial movies on load.

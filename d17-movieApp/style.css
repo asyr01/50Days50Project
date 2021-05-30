@@ -108,6 +108,7 @@ main {
 
 .movie:hover .overview {
   transform: translateY(0);
+  height: 100%;
 }
 
 .pagination {
@@ -134,6 +135,12 @@ main {
   border-radius: 50%;
 }
 
+#numInput {
+  font-size: 20px;
+  padding: 20px;
+}
+
+#numInput:focus,
 .arrow:focus {
   outline: 0;
 }
