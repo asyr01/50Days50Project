@@ -67,7 +67,7 @@ function setTime() {
     0,
     360
   )}deg) `;
-  hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+  secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(
     seconds,
     0,
     59,
@@ -76,8 +76,10 @@ function setTime() {
   )}deg) `;
 }
 
+// Helper function to transform time to degrees.
 function scale(number, inMin, inMax, outMin, outMax) {
   return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 }
 
-setTime();
+// Call every second
+setInterval(setTime, 1000);
