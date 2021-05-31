@@ -47,11 +47,13 @@ function setTime() {
   const time = new Date();
   const month = time.getMonth();
   const day = time.getDay();
+  const date = time.getDate();
   const hours = time.getHours();
   // since it's a 12 hours clock.
   const hoursForClock = hours % 12;
   const minutes = time.getMinutes();
   const seconds = time.getSeconds();
+  const ampm = hours >= 12 ? 'PM' : 'AM';
 
   hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(
     hoursForClock,
@@ -74,6 +76,12 @@ function setTime() {
     0,
     360
   )}deg) `;
+
+  // Setting the DOM with data.
+  timeEl.textContent = `${hoursForClock}:${
+    minutes < 10 ? `0${minutes}` : minutes
+  } ${ampm}`;
+  dateEl.innerHTML = `${days[day]}, ${months[month]}, <span class="circle">${date}</span>`;
 }
 
 // Helper function to transform time to degrees.
