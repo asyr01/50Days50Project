@@ -5,6 +5,7 @@
 }
 
 body {
+  background-color: #000;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   align-items: center;
@@ -12,4 +13,24 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+button {
+  position: relative;
+  background-color: purple;
+  color: #fff;
+  border: 1px solid purple;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 20px 30px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+button .circle {
+  position: absolute;
+  background-color: white;
+  width: 100px;
+  height: 100px;
 }
