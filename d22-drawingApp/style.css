@@ -44,6 +44,10 @@ canvas {
   padding: 0.7rem;
 }
 
+.toolbox > *:not(:nth-child(2)) {
+  cursor: pointer;
+}
+
 .toolbox > *:last-child {
   margin-left: auto;
 }
