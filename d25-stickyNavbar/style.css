@@ -18,3 +18,32 @@ body {
 }
 
 /* @todo Nav */
+
+/* Landing Section */
+.hero {
+  background-image: url('https://source.unsplash.com/random/');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  z-index: -1;
+}
+
+/* Overlay for Landing */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -2;
+}
