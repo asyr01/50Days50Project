@@ -24,7 +24,7 @@ body {
   background-image: url('https://source.unsplash.com/random/');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom center;
+  background-position: center center;
   height: 100vh;
   color: #fff;
   display: flex;
@@ -46,4 +46,37 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: -2;
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 46px;
+  margin: -20px 0 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  letter-spacing: 1px;
+  width: 600px;
+  text-align: center;
+}
+
+/* Content section styling starts here */
+
+.content h2,
+.content h3 {
+  font-size: 150%;
+  margin: 20px 0;
+}
+
+.content p {
+  color: #666;
+  line-height: 30px;
+  letter-spacing: 1.2px;
 }
