@@ -27,6 +27,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  transition: transform 0.5s ease-in-out;
 }
 
 /* Immediate child of .left-slide div 100 percent of its parent which is 35% of entire page*/
@@ -52,6 +53,7 @@ body {
   position: absolute;
   top: 0;
   left: 35%;
+  transition: transform 0.5s ease-in-out;
 }
 
 .right-slide > div {
@@ -89,14 +91,14 @@ button:focus {
 }
 
 .slider-container .action-buttons .down-button {
-  /* Almost 15px */
+  /* Almost 45px */
   transform: translateX(-100%);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
 .slider-container .action-buttons .up-button {
-  /* Almost 15px */
+  /* Almost 50px */
   transform: translateY(-100%);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
