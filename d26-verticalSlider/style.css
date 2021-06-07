@@ -32,6 +32,7 @@ body {
 /* Immediate child of .left-slide div 100 percent of its parent which is 35% of entire page*/
 .left-slide > div {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,4 +59,45 @@ body {
   background-size: cover;
   background-position: center center;
   height: 100%;
+}
+
+/* General button styling */
+button {
+  background-color: #fff;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px;
+  color: red;
+}
+
+button:hover {
+  color: #222;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Positioning the buttons */
+.slider-container .action-buttons button {
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  z-index: 10;
+}
+
+.slider-container .action-buttons .down-button {
+  /* Almost 15px */
+  transform: translateX(-100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.slider-container .action-buttons .up-button {
+  /* Almost 15px */
+  transform: translateY(-100%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
