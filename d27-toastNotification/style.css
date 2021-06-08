@@ -52,4 +52,28 @@ body {
   border-radius: 5px;
   padding: 1rem 2rem;
   margin: 0.5rem;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  cursor: pointer;
+  background-color: #dac18b;
+  color: #db3c3c;
+  top: -25px;
+  padding: 3px 9px;
+  right: -5px;
+  border-radius: 50%;
+}
+
+.toast.info {
+  color: #db3c3c;
+}
+
+.toast.success {
+  color: #0f0;
+}
+
+.toast.success {
+  color: #00f;
 }
