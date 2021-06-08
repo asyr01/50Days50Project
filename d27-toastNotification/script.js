@@ -11,14 +11,18 @@ const messages = [
 
 button.addEventListener('click', () => createNotification());
 
+// Getting random colors just for fun
+const types = ['info', 'success', 'error'];
+
 // This way you push one notification, we can use forEach to push all notifications at once
-// Close element for closing notification we can make it like popup by not appending close element
-// This type element can specified as error success like in bootstrap
+
+// This type argument can specified as error or success like in bootstrap
 function createNotification(message = null, type = null) {
   const notif = document.createElement('div');
+  // Close element for closing notification we can make it like popup by not appending close element
   const close = document.createElement('p');
   notif.classList.add('toast');
-  notif.classList.add(type ? type : 'info');
+  notif.classList.add(type ? type : getRandomType());
   close.classList.add('close');
   close.innerText = 'X';
   notif.innerText = message ? message : getRandomMessage();
@@ -32,4 +36,9 @@ function createNotification(message = null, type = null) {
 // To get a random index of array
 function getRandomMessage() {
   return messages[Math.floor(Math.random() * messages.length)];
+}
+
+// To get a random type
+function getRandomType() {
+  return types[Math.floor(Math.random() * types.length)];
 }
