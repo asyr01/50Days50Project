@@ -64,13 +64,14 @@ body {
 }
 
 .avatar {
+  width: 375px;
   border: 10px solid var(--primary-color);
   height: 100%;
 }
 
 /* Styling of test side of the card */
 .user-info {
-  margin-left: 5.5rem;
+  margin-left: 3.5rem;
 }
 
 .user-info h2 {
@@ -131,7 +132,9 @@ body {
   .user-form {
     max-width: 350px;
   }
+
   .avatar {
+    width: 200px;
     max-height: 200px;
     margin-bottom: 10px;
     border: 7px solid var(--primary-color);

@@ -7,11 +7,12 @@ const search = document.getElementById('search');
 
 getUser('asyr01');
 
+// Make a request to get the user from Github API
 async function getUser(username) {
   try {
     const { data } = await axios(APIURL + username);
-    console.log(data);
     createUserCard(data);
+    getRepos(username);
   } catch (err) {
     // If a user not found then call createErrorCard
     if (err.response.status == 404) {
@@ -20,6 +21,17 @@ async function getUser(username) {
   }
 }
 
+// Make a request to get the users' repos from Github API
+async function getRepos(username) {
+  try {
+    const { data } = await axios(APIURL + username + '/repos?sort=created');
+    addReposToCard(data);
+  } catch (err) {
+    createErrorCard('Problem with taking repos from API');
+  }
+}
+
+// Inserting values to the DOM
 function createUserCard(user) {
   const cardHTML = `<div class="card">
     <div>
@@ -54,6 +66,20 @@ function createErrorCard(msg) {
      </div> 
     `;
   main.innerHTML = cardHTML;
+}
+
+// Inserting repos to the card element.
+function addReposToCard(repos) {
+  const reposEl = document.getElementById('repos');
+  repos.slice(0, 5);
+  repos.forEach((repo) => {
+    const repoEl = document.createElement('a');
+    repoEl.classList.add('repo');
+    repoEl.href = repo.html_url;
+    repoEl.target = '_blank';
+    repoEl.innerText = repo.name;
+    reposEl.appendChild(repoEl);
+  });
 }
 
 // It could be a keydown or change event but this will make a request every time
