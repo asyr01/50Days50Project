@@ -5,13 +5,18 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
+getUser('asyr01');
+
 async function getUser(username) {
   try {
     const { data } = await axios(APIURL + username);
     console.log(data);
     createUserCard(data);
   } catch (err) {
-    console.log('user not found');
+    // If a user not found then call createErrorCard
+    if (err.response.status == 404) {
+      createErrorCard('No profile with that user name');
+    }
   }
 }
 
@@ -41,7 +46,15 @@ function createUserCard(user) {
   main.innerHTML = cardHTML;
 }
 
-getUser('asyr01');
+// Shows an error to user when user not found
+function createErrorCard(msg) {
+  const cardHTML = `
+     <div class="card">
+       <h1>${msg}</h1>
+     </div> 
+    `;
+  main.innerHTML = cardHTML;
+}
 
 // It could be a keydown or change event but this will make a request every time
 form.addEventListener('submit', (e) => {
