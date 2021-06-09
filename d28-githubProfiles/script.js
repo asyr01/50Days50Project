@@ -1,6 +1,7 @@
 // Our root url /username/repos will be concatenated to this.
 const APIURL = 'https://api.github.com/users/';
 
+const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
@@ -8,9 +9,36 @@ async function getUser(username) {
   try {
     const { data } = await axios(APIURL + username);
     console.log(data);
+    createUserCard(data);
   } catch (err) {
     console.log('user not found');
   }
+}
+
+function createUserCard(user) {
+  const cardHTML = `<div class="card">
+    <div>
+      <img
+        src="${user.avatar_url}"
+        alt="${user.name}"
+        class="avatar"
+      />
+    </div>
+    <div class="user-info">
+      <h2>${user.name}</h2>
+      <p>
+      ${user.bio}
+      </p>
+      <ul>
+        <li>${user.followers} <strong>Followers</strong></li>
+        <li>${user.following} <strong>Following</strong></li>
+        <li>${user.public_repos} <strong>Repositories</strong></li>
+      </ul>
+      <div id="repos"></div>
+    </div>
+  </div>`;
+
+  main.innerHTML = cardHTML;
 }
 
 getUser('asyr01');
