@@ -23,6 +23,36 @@ generateEl.addEventListener('click', () => {
   );
 });
 
+// For shuffling the generated password https://stackoverflow.com/questions/3943772/how-do-i-shuffle-the-characters-in-a-string-in-javascript
+
+String.prototype.shuffle = function () {
+  var a = this.split(''),
+    n = a.length;
+
+  for (var i = n - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = a[i];
+    a[i] = a[j];
+    a[j] = tmp;
+  }
+  return a.join('');
+};
+
+// To copy password by clicking the button
+clipboardEl.addEventListener('click', () => {
+  const textarea = document.createElement('textarea');
+  const password = resultEl.innerText;
+
+  if (!password) {
+    return;
+  }
+  textarea.value = password;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
+  alert('password copied to clipboard');
+});
 // Function which returns a password
 function generatePassword(lower, upper, number, symbol, length) {
   let generatedPassword = '';
@@ -36,6 +66,7 @@ function generatePassword(lower, upper, number, symbol, length) {
   if (typesCount === 0) {
     return '';
   }
+
   // Generate password by getting name and and calling it
   for (let i = 0; i < length; i += typesCount) {
     typesArr.forEach((type) => {
@@ -44,7 +75,7 @@ function generatePassword(lower, upper, number, symbol, length) {
       generatedPassword += randomFunc[funcName]();
     });
   }
-  const finalPassword = generatedPassword;
+  const finalPassword = generatedPassword.slice(0, length).shuffle();
   return finalPassword;
 }
 
