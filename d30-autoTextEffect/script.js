@@ -13,14 +13,14 @@ function writeText() {
   textEl.innerText = text.slice(0, idx);
   idx++;
 
-  // Repeat the effect
+  // Repeat the text
   if (idx > text.length) {
     idx = 1;
   }
-  // Recursive
+  // Recursive function
   setTimeout(writeText, speed);
 }
 
 speedEl.addEventListener('input', (e) => {
-  speed = 300 / e.target.value;
+  speed = 600 / e.target.value;
 });
