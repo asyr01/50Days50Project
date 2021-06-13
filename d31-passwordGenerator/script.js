@@ -53,6 +53,7 @@ clipboardEl.addEventListener('click', () => {
   textarea.remove();
   alert('password copied to clipboard');
 });
+
 // Function which returns a password
 function generatePassword(lower, upper, number, symbol, length) {
   let generatedPassword = '';
