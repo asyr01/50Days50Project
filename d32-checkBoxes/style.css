@@ -7,9 +7,51 @@
 body {
   font-family: 'Montserrat', sans-serif;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+/* Toggles */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  width: 200px;
+}
+
+/* To change it to a ball */
+.toggle {
+  visibility: hidden;
+}
+
+/* Container which includes the ball */
+.label {
+  background-color: orangered;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 15px 0;
+  width: 80px;
+  height: 40px;
+  position: relative;
+}
+
+.toggle:checked + .label {
+  background-color: greenyellow;
+}
+
+.ball {
+  background: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  align-items: center;
+  justify-content: center;
 }
