@@ -1,6 +1,6 @@
 const addBtn = document.getElementById('add');
 
-addBtn.addEventListener('click', () => addNewNote());
+addBtn.addEventListener('click', () => addNewNote(''));
 
 function addNewNote(text) {
   // Creates a new node
@@ -19,8 +19,18 @@ function addNewNote(text) {
   const main = note.querySelector('.main');
   const textArea = note.querySelector('textarea');
 
-  deleteBtn.addEventListener('click', () => {
-    note.remove();
+  textArea.value = text;
+  main.innerHTML = marked(text);
+
+  deleteBtn.addEventListener('click', () => note.remove());
+
+  editBtn.addEventListener('click', () => {
+    main.classList.toggle('hidden');
+    textArea.classList.toggle('hidden');
+  });
+
+  textArea.addEventListener('input', (e) => {
+    main.innerHTML = marked(e.target.value);
   });
 
   document.body.appendChild(note);
