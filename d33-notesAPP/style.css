@@ -37,6 +37,7 @@ body {
   margin: 30px 20px;
   height: 400px;
   width: 400px;
+  text-transform: capitalize;
 }
 
 /* Buttons edit - delete */
@@ -54,6 +55,13 @@ body {
   color: var(--secondary-color);
   font-size: 1rem;
   margin-left: 0.5rem;
+}
+
+.add:hover,
+.tools button:hover {
+  transform: scale(1.2);
+  color: #db3232;
+  transition: all 0.2s ease-in-out;
 }
 
 /* Textarea which you coukd type */
