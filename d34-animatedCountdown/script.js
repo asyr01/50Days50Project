@@ -5,14 +5,38 @@ const replay = document.querySelector('#replay');
 
 runAnimation();
 
+function resetDOM() {
+  counter.classList.remove('hide');
+  finalMessage.classList.remove('show');
+
+  nums.forEach((num) => {
+    num.classList.value = '';
+  });
+  nums[0].classList.add('in');
+}
+
 function runAnimation() {
   nums.forEach((num, i) => {
     const nextToLast = nums.length - 1;
+    // Run animation by adding 'in' and 'out' classes.
     num.addEventListener('animationend', (e) => {
       if (e.animationName === 'goIn' && i !== nextToLast) {
+        // Remove in and add out if it's not last
         num.classList.remove('in');
         num.classList.add('out');
+      } else if (e.animationName === 'goOut' && num.nextElementSibling) {
+        // Add in if there is another sibling
+        num.nextElementSibling.classList.add('in');
+      } else {
+        // Shows the 'GO' and Replay
+        counter.classList.add('hide');
+        finalMessage.classList.add('show');
       }
     });
   });
 }
+
+replay.addEventListener('click', () => {
+  resetDOM();
+  runAnimation();
+});
