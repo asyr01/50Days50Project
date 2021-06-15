@@ -5,6 +5,7 @@ const replay = document.querySelector('#replay');
 
 runAnimation();
 
+// Clear the classes, prepare the DOM for replay
 function resetDOM() {
   counter.classList.remove('hide');
   finalMessage.classList.remove('show');
@@ -15,6 +16,7 @@ function resetDOM() {
   nums[0].classList.add('in');
 }
 
+// Changes the classes dynamically
 function runAnimation() {
   nums.forEach((num, i) => {
     const nextToLast = nums.length - 1;
@@ -28,7 +30,7 @@ function runAnimation() {
         // Add in if there is another sibling
         num.nextElementSibling.classList.add('in');
       } else {
-        // Shows the 'GO' and Replay
+        // Animation ends, shows the 'GO' and 'Replay'
         counter.classList.add('hide');
         finalMessage.classList.add('show');
       }
