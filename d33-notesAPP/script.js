@@ -41,7 +41,7 @@ function addNewNote(text) {
     textArea.classList.toggle('hidden');
   });
 
-  // When there is a change updateLS and use markedown
+  // When there is a change updateLS and use markdown
   textArea.addEventListener('input', (e) => {
     main.innerHTML = marked(e.target.value);
     updateLS();
