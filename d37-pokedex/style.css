@@ -19,6 +19,7 @@ h1 {
   letter-spacing: 3px;
 }
 
+/* parent of all divs */
 .poke-container {
   display: flex;
   flex-wrap: wrap;
@@ -28,6 +29,7 @@ h1 {
   max-width: 1200px;
 }
 
+/* A card */
 .pokemon {
   background-color: #eee;
   border-radius: 10px;
