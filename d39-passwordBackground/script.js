@@ -5,5 +5,5 @@ password.addEventListener('input', (e) => {
   const input = e.target.value;
   const length = input.length;
   let blurVal = 20 - length * 2;
-  if (blurVal > 0) backgroundEl.style.filter = `blur(${blurVal}px)`;
+  backgroundEl.style.filter = `blur(${blurVal}px)`;
 });
