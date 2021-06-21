@@ -72,3 +72,27 @@ body {
 .boxes.big .box {
   transform: rotateZ(360deg);
 }
+
+/* Right shadow for the boxes */
+.box::after {
+  content: '';
+  background-color: #09287a;
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  transform: skewY(45deg);
+}
+
+/* Bottom shadow for the boxes */
+.box::before {
+  content: '';
+  background-color: #7493e9;
+  position: absolute;
+  bottom: -15px;
+  left: 8px;
+  height: 15%;
+  width: 100%;
+  transform: skewX(45deg);
+}
