@@ -45,9 +45,43 @@ body {
   -moz-appearance: textfield;
 }
 
+.code:not(:last-child) {
+  margin-right: 3px;
+}
+
 /* Removes the spin button from the right */
 .code::-webkit-outer-spin-button,
 .code::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.code:valid {
+  border-color: #4ff005;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.25);
+}
+
+.info {
+  background-color: #d3c8c8;
+  display: inline-block;
+  padding: 10px;
+  line-height: 20px;
+  max-width: 400px;
+  color: #fff;
+}
+
+.info a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .code-container {
+    flex-wrap: wrap;
+  }
+
+  .code {
+    font-size: 60px;
+    height: 80px;
+    max-width: 70px;
+  }
 }
