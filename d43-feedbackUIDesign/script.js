@@ -13,12 +13,24 @@ ratingsContainer.addEventListener('click', (e) => {
   }
 });
 
+function setText() {
+  if (selectedRating === 'Satisfied') {
+    return 'We are happy to know you are satisfied.';
+  } else if (selectedRating === 'Neutral') {
+    return 'We will try to make you happier in the future';
+  } else {
+    return 'We are sorry to know you are not satisfied';
+  }
+}
+
 // When clicked manipulate the DOM and change the container
 sendBtn.addEventListener('click', (e) => {
+  const textString = setText();
   panel.innerHTML = `
      <i class="fas fa-heart"></i>
      <strong>Thank you!</strong> <br>
      <strong>Feedback: ${selectedRating} </strong>
+     <p>${textString}</p>
      <p>We'll use your feedback to improve our customer support.<p>
     `;
 });
