@@ -16,6 +16,4 @@ function createBoxes() {
 createBoxes();
 
 // To seperate and put together
-btn.addEventListener('click', () => {
-  boxesContainer.classList.toggle('big');
-});
+btn.addEventListener('click', () => boxesContainer.classList.toggle('big'));
