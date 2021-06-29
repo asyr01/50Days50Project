@@ -7,9 +7,33 @@
 body {
   font-family: 'Montserrat', sans-serif;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   margin: 0;
+}
+
+.title {
+  margin: 10px 0 0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Each image 300px max-width 1000px then flex-wrap 3 images per row */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+/* To give a certain size to the img */
+.container img {
+  object-fit: cover;
+  margin: 10px;
+  height: 300px;
+  width: 300px;
+  max-width: 100%;
 }
