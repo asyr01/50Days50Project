@@ -2,6 +2,14 @@ const form = document.getElementById('form');
 const input = document.getElementById('input');
 const todosUL = document.getElementById('todos');
 
+// localStorage functionality
+const todos = JSON.parse(localStorage.getItem('todos'));
+
+// if there is todo in localStorage
+if (todos) {
+  todos.forEach((todo) => addTodo(todo));
+}
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   addTodo();
@@ -22,16 +30,33 @@ function addTodo(todo) {
     }
     todoEl.innerText = todoText;
     // Marks as completed when clicked
-    todoEl.addEventListener('click', () =>
-      todoEl.classList.toggle('completed')
-    );
+    todoEl.addEventListener('click', () => {
+      todoEl.classList.toggle('completed');
+      updateLS();
+    });
     // Removes todo when there is a right click
     todoEl.addEventListener('contextmenu', (e) => {
       e.preventDefault();
       todoEl.remove();
+      updateLS();
     });
-
     todosUL.appendChild(todoEl);
     input.value = '';
+    updateLS();
   }
+}
+
+// Updates local storage
+function updateLS() {
+  todosEl = document.querySelectorAll('li');
+  const todos = [];
+  // Object for each li to manipulate DOM
+  todosEl.forEach((todoEl) => {
+    todos.push({
+      text: todoEl.innerText,
+      completed: todoEl.classList.contains('completed'),
+    });
+  });
+
+  localStorage.setItem('todos', JSON.stringify(todos));
 }
