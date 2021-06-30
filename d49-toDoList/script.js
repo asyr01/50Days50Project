@@ -1,0 +1,37 @@
+const form = document.getElementById('form');
+const input = document.getElementById('input');
+const todosUL = document.getElementById('todos');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  addTodo();
+});
+
+// addTodo adds li to the ul -todosUL-
+function addTodo(todo) {
+  let todoText = input.value;
+  // if todo passed as an argument, keep it in a variable
+  if (todo) {
+    todoText = todo.text;
+  }
+  // if todo text exist -not empty-
+  if (todoText) {
+    const todoEl = document.createElement('li');
+    if (todo && todo.completed) {
+      todoEl.classList.add('completed');
+    }
+    todoEl.innerText = todoText;
+    // Marks as completed when clicked
+    todoEl.addEventListener('click', () =>
+      todoEl.classList.toggle('completed')
+    );
+    // Removes todo when there is a right click
+    todoEl.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      todoEl.remove();
+    });
+
+    todosUL.appendChild(todoEl);
+    input.value = '';
+  }
+}
