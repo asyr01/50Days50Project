@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* General styling and Screen 1 */
 * {
   box-sizing: border-box;
 }
@@ -12,6 +13,14 @@ body {
   overflow: hidden;
   margin: 0;
   text-align: center;
+}
+
+a {
+  color: #eee;
+}
+
+h1 {
+  line-height: 1.4;
 }
 
 .btn {
@@ -43,9 +52,49 @@ body {
   width: 100vw;
 }
 
+/* Change the screen */
+.screen.up {
+  margin-top: -200vh;
+}
+
+/* Screen 2 */
+.insects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.insects-list li {
+  margin: 10px;
+}
+
+.choose-insect-btn {
+  background-color: white;
+  border: 5px solid #eee;
+  cursor: pointer;
+  font-family: inherit;
+  width: 150px;
+  height: 150px;
+  user-select: none;
+}
+
+.choose-insect-btn:hover {
+  background-color: #4b0082;
+  color: #eee;
+}
+
+.choose-insect-btn:active {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #000;
+}
+
 /* Images have equal sizes to each other */
 .choose-insect-btn img {
   width: 100px;
   height: 100px;
   object-fit: contain;
 }
+
+/* Screen 3 */
