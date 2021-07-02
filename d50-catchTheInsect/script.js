@@ -12,3 +12,17 @@ let selected_insect = {};
 
 // Goes second screen
 start_btn.addEventListener('click', () => screens[0].classList.add('up'));
+
+// Takes image path and alt attribute of which box is selected at second screen.
+choose_insect_btn.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const img = btn.querySelector('img');
+    const src = img.getAttribute('src');
+    const alt = img.getAttribute('alt');
+    selected_insect = { src, alt };
+    // Goes third screen
+    screens[1].classList.add('up');
+    setTimeout(createInsect, 1000);
+    startGame();
+  });
+});
