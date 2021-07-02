@@ -50,11 +50,12 @@ h1 {
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  transition: margin 0.5s ease-out;
 }
 
 /* Change the screen */
 .screen.up {
-  margin-top: -200vh;
+  margin-top: -100vh;
 }
 
 /* Screen 2 */
@@ -137,7 +138,7 @@ h1 {
   transform: translate(-50%, 150%);
 }
 
-/* Insect which will be inserted via click */
+/* Insect which will be inserted via click, will be positioned randomly */
 .insect {
   cursor: pointer;
   display: flex;
@@ -147,9 +148,6 @@ h1 {
   height: 100px;
   position: absolute;
   transition: transform 0.3s ease-in-out;
-  /* will be positioned randomly */
-  top: 200px;
-  left: 70px;
   /* When clicked, scale will be 0 so it's gone */
   transform: translate(-50%, -50%) scale(1);
 }

@@ -1,4 +1,14 @@
 const screens = document.querySelectorAll('.screen');
+const choose_insect_btn = document.querySelectorAll('.choose-insect-btn');
+const start_btn = document.getElementById('start-btn');
+const game_container = document.getElementById('game-container');
+const timeEl = document.getElementById('time');
+const scoreEl = document.getElementById('score');
+const message = document.getElementById('message');
 
-// screens[0] is the first screen which has "Play Game" button
-screens[0].classList.add('up');
+let seconds = 0;
+let score = 0;
+let selected_insect = {};
+
+// Goes second screen
+start_btn.addEventListener('click', () => screens[0].classList.add('up'));
