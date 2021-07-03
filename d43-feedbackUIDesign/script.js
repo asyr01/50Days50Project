@@ -15,11 +15,11 @@ ratingsContainer.addEventListener('click', (e) => {
 
 function setText() {
   if (selectedRating === 'Satisfied') {
-    return 'We are happy to know you are satisfied.';
+    return 'We are happy for that you are satisfied.';
   } else if (selectedRating === 'Neutral') {
-    return 'We will try to make you happier in the future';
+    return 'We will try to make you happier in the future.';
   } else {
-    return 'We are sorry to know you are not satisfied';
+    return 'We are sorry for that.';
   }
 }
 
