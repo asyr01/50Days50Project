@@ -23,7 +23,9 @@ function getRandomNr() {
   return Math.floor(Math.random() * 10 + 300);
 }
 
+// Creates random Images and scrolls to top
 function getRandomImages() {
+  window.scrollTo({ top: 100, behavior: 'smooth' });
   container.innerHTML = ``;
   createRandomImages();
 }
