@@ -8,6 +8,8 @@ const todos = JSON.parse(localStorage.getItem('todos'));
 // if there is todo in localStorage
 if (todos) {
   todos.forEach((todo) => addTodo(todo));
+} else {
+  todosUL.style.display = 'none';
 }
 
 form.addEventListener('submit', (e) => {
@@ -24,6 +26,7 @@ function addTodo(todo) {
   }
   // if todo text exist -not empty-, sets from local storage
   if (todoText) {
+    todosUL.style.display = 'block';
     const todoEl = document.createElement('li');
     if (todo && todo.completed) {
       todoEl.classList.add('completed');
@@ -58,6 +61,7 @@ function addTodo(todo) {
 function updateLS() {
   todosEl = document.querySelectorAll('li');
   const todos = [];
+
   // Object for each li to manipulate DOM
   todosEl.forEach((todoEl) => {
     todos.push({

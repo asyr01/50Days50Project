@@ -47,9 +47,10 @@ form {
 }
 
 .todos {
-  background-color: #fff;
+  background-color: rgb(158, 139, 139);
   padding: 0;
   list-style-type: none;
+  display: none;
 }
 
 .todos li {
