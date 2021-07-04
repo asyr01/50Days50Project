@@ -22,11 +22,13 @@ function addTodo(todo) {
   if (todo) {
     todoText = todo.text;
   }
-  // if todo text exist -not empty-
+  // if todo text exist -not empty-, sets from local storage
   if (todoText) {
     const todoEl = document.createElement('li');
     if (todo && todo.completed) {
       todoEl.classList.add('completed');
+    } else if (todo && todo.important) {
+      todoEl.classList.add('important');
     }
     todoEl.innerText = todoText;
     // Marks as completed when clicked
@@ -34,6 +36,12 @@ function addTodo(todo) {
       todoEl.classList.toggle('completed');
       updateLS();
     });
+    // Marks as important when double clicked
+    todoEl.addEventListener('dblclick', () => {
+      todoEl.classList.toggle('important');
+      updateLS();
+    });
+
     // Removes todo when there is a right click
     todoEl.addEventListener('contextmenu', (e) => {
       e.preventDefault();
@@ -55,6 +63,7 @@ function updateLS() {
     todos.push({
       text: todoEl.innerText,
       completed: todoEl.classList.contains('completed'),
+      important: todoEl.classList.contains('important'),
     });
   });
 

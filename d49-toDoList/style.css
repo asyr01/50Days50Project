@@ -69,3 +69,9 @@ small {
   color: #b8b2b2;
   margin-top: 3rem;
 }
+
+.todos li.important {
+  color: #f00;
+  font-size: 30px;
+  font-weight: bold;
+}
