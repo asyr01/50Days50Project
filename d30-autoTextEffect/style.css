@@ -25,7 +25,8 @@ div {
   font-size: 20px;
 }
 
-input {
+/* Speed */
+input[type='number'] {
   width: 50px;
   padding: 5px;
   font-size: 20px;
@@ -36,4 +37,16 @@ input {
 
 input:focus {
   outline: 0;
+}
+
+#input {
+  color: #000;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  width: 400px;
+  height: 50px;
+  border: none;
+  font-size: 20px;
+  padding: 20px;
 }

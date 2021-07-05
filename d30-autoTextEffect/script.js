@@ -1,5 +1,6 @@
 const textEl = document.querySelector('#text');
 const speedEl = document.querySelector('#speed');
+const input = document.querySelector('#input');
 
 const text = 'We love programming';
 
