@@ -50,3 +50,10 @@ input:focus {
   font-size: 20px;
   padding: 20px;
 }
+
+#start-btn {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

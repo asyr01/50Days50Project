@@ -25,3 +25,8 @@ function writeText() {
 speedEl.addEventListener('input', (e) => {
   speed = 600 / e.target.value;
 });
+
+// To figure out the text given with input.
+input.addEventListener('submit', () => {
+  console.log('ali');
+});
