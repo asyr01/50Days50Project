@@ -53,7 +53,13 @@ input:focus {
 
 #start-btn {
   position: absolute;
-  top: 55%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 700;
 }
